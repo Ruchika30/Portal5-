@@ -396,6 +396,9 @@ ul li {
   padding-left: 0.4em;
 }
 
+li a {
+  text-decoration: none;
+}
 .first {
   border-left: none;
   padding-left: 0;
