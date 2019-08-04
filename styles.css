@@ -411,6 +411,32 @@ li a {
   padding-left: 0;
 }
 
+.footer-contents li {
+  display: inline;
+  border-left: 2px solid;
+  padding-left: 0.4em;
+  color: white;
+}
+
+.footer-contents li:first-child {
+  border-left: none;
+  padding-left: 0;
+}
+
+.footer-contents a {
+  color: white;
+  font-family: sans-serif;
+}
+
+.footer-contents a,
+.copy {
+  letter-spacing: 1px;
+}
+
+.copy {
+  color: white;
+  font-family: sans-serif;
+}
 .logo {
   margin-block-start: 0em;
   margin-block-end: 0em;
@@ -425,13 +451,13 @@ li a {
   /* margin-top: 20px; */
 }
 
-/* slider */
+/*---- slider */
 @keyframes slidy {
   0% {
-    left: 0%;
+    left: -0%;
   }
   20% {
-    left: 0%;
+    left: -0%;
   }
   25% {
     left: -100%;
@@ -452,7 +478,7 @@ li a {
     left: -300%;
   }
   100% {
-    left: -400%;
+    left: -300%;
   }
 }
 body {
@@ -461,7 +487,8 @@ body {
 div#slider {
   overflow: hidden;
   border: 10px solid rgb(182, 170, 170);
-  height: 500px;
+  max-height: 500px;
+  position: relative;
 }
 div#slider figure img {
   width: 20%;
@@ -474,19 +501,19 @@ div#slider figure {
   left: 0;
   text-align: left;
   font-size: 0;
-  animation: 10s slidy infinite;
+  animation: 4s slidy infinite;
 }
 
-/* slider ends*/
+/*----- slider ends----*/
 
 .boxwrap {
-  width: 13%;
+  width: 12rem;
   position: absolute;
   color: white;
-  top: 165px;
+  /* top: 165px; */
   z-index: 3;
   /* left: 1050px; */
-  left: 500px;
+  /* right: 2rem; */
   font-family: "tahoma";
   background-color: white;
   padding: 10px;
@@ -494,6 +521,9 @@ div#slider figure {
   font-size: 15px;
   color: black;
   border-radius: 5px;
+  transform: translate(-0%, -50%);
+  top: 50%;
+  right: 2rem;
 }
 
 .dot {
@@ -538,6 +568,10 @@ div#slider figure {
   margin-bottom: 5px;
   font-size: 12px;
 }
+.crums a {
+  text-decoration: none;
+  color: black;
+}
 
 .sect1 {
   width: 80%;
@@ -554,10 +588,11 @@ div#slider figure {
   display: flex;
   align-items: center; /* vertical align*/
   justify-content: center; /* hori align*/
+  margin: 0 1rem;
 }
 
 .cir {
-  width: 80%;
+  width: 100%;
 }
 
 .row1 {
@@ -575,6 +610,18 @@ div#slider figure {
 #secdecr {
   margin-block-start: 0em;
   margin-block-end: 0em;
+  color: white;
+}
+
+#secdecr {
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
+#sectitle {
+  margin-block-end: 0.5em;
+  font-family: sans-serif;
+  font-size: 12px;
 }
 
 .decrwrap {
@@ -614,14 +661,12 @@ div#slider figure {
 .sect2title {
   margin-block-start: 0em;
   margin-block-end: 0.5em;
-}
-
-.sect2title {
   font-size: 12px;
   font-weight: bold;
 }
+
 .sect2content {
-  font-size: 11px;
+  font-size: 12px;
   line-height: 14px;
 }
 footer {
@@ -666,7 +711,29 @@ footer {
   opacity: 0;
 }
 
-/* --------------------------desktop scale ends */
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: white;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 25px;
+  font-family: sans-serif;
+  width: 6%;
+}
+
+#myBtn:hover {
+  background-color: rgb(248, 244, 16);
+}
+
+/* --------------------------------------desktop scale ends */
 
 @media only screen and (max-width: 767px) {
   #hamburger {
@@ -698,5 +765,59 @@ footer {
     left: 0;
     background: white;
     z-index: 5;
+  }
+
+  .boxwrap {
+    position: static;
+    width: initial;
+    transform: none;
+  }
+
+  div#slider {
+    max-height: initial;
+  }
+
+  .sect1,
+  .sect2 {
+    width: 100%;
+  }
+  .sectionwrap {
+    display: block;
+  }
+
+  .sect2 {
+    margin-left: 0;
+    margin-top: 2rem;
+  }
+  .row1 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 15px 0px;
+  }
+
+  .cirwrap {
+    width: 100px;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .decrwrap {
+    padding: 1rem;
+  }
+
+  .sect2row1 {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+
+  .sect2imgwrap {
+    width: 50%;
+    margin: auto;
+  }
+  .sect2contentwrap {
+    padding: 1rem 1rem;
   }
 }
